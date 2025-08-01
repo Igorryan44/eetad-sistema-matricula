@@ -1,90 +1,123 @@
 # 🎓 Sistema EETAD Palmas - Matrícula e Gestão Acadêmica
 
-Sistema completo de matrícula e gestão acadêmica para a **Escola Estadual de Tempo Integral Antônio Demóstenes (EETAD)** em Palmas, Tocantins.
+Sistema completo de matrícula e gestão acadêmica para a **Escola de Educação Teológica das Assembleias de Deus (EETAD)** - Núcleo Palmas, Tocantins.
+
+## 📋 Sobre o Projeto
+
+Sistema desenvolvido para gerenciar matrículas e pedidos de livros dos alunos da EETAD, integrado com:
+- **Ministério**: Assembléia de Deus Ministério Missão - PRV
+- **Pagamentos**: MercadoPago (PIX)
+- **Notificações**: WhatsApp e Email
+- **Banco de Dados**: Supabase
+
+## 🌐 Repositório
+
+**GitHub**: https://github.com/Igorryan44/eetad-sistema-matricula
 
 ## 📁 Estrutura do Projeto
 
 ### Frontend (React + Vite)
-- **`src/`** - Código principal do sistema React
+- **`src/components/`** - Componentes React (Header, Footer, Forms)
+- **`src/pages/`** - Páginas principais do sistema
+- **`src/integrations/`** - Integrações com Supabase
 - **`index.html`** - Página principal
 - **`package.json`** - Dependências do projeto React
 
 ### Backend/Webhooks
 - **`webhooks/`** - Webhooks do WhatsApp (Deno)
 - **`supabase/functions/`** - Edge Functions do Supabase
+  - Processamento de pagamentos
+  - Notificações automáticas
+  - Validação de CPF
+  - Chatbot IA
 
 ### Configuração e Deploy
 - **Scripts PowerShell** - Automação de configuração
 - **Documentação** - Guias de implantação e configuração
+- **`vercel.json`** - Configuração para deploy na Vercel
 
-## Project info
+## 🚀 Como Executar o Projeto
 
-**URL**: https://lovable.dev/projects/b60c81ce-5c77-476f-8949-83b993b67387
+### Pré-requisitos
+- Node.js 18+ instalado
+- Conta no Supabase
+- Conta no MercadoPago (para pagamentos)
 
-## How can I edit this code?
+### Instalação
 
-There are several ways of editing your application.
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Igorryan44/eetad-sistema-matricula.git
 
-**Use Lovable**
+# 2. Navegue para o diretório
+cd eetad-sistema-matricula
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b60c81ce-5c77-476f-8949-83b993b67387) and start prompting.
+# 3. Instale as dependências
+npm install
 
-Changes made via Lovable will be committed automatically to this repo.
+# 4. Configure as variáveis de ambiente
+cp .env.example .env
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 5. Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Configuração de Ambiente
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Crie um arquivo `.env` com as seguintes variáveis:
 
-**Use GitHub Codespaces**
+```env
+VITE_SUPABASE_URL=sua_url_supabase
+VITE_SUPABASE_ANON_KEY=sua_chave_supabase
+VITE_MERCADOPAGO_PUBLIC_KEY=sua_chave_publica_mercadopago
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🛠️ Tecnologias Utilizadas
 
-## What technologies are used for this project?
+- **Frontend**: React 18, TypeScript, Vite
+- **UI**: Tailwind CSS, shadcn/ui, Lucide Icons
+- **Backend**: Supabase (PostgreSQL, Edge Functions)
+- **Pagamentos**: MercadoPago API
+- **Notificações**: WhatsApp Business API, EmailJS
+- **Deploy**: Vercel, Netlify
 
-This project is built with:
+## 📦 Scripts Disponíveis
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+npm run dev      # Servidor de desenvolvimento
+npm run build    # Build de produção
+npm run preview  # Preview do build
+npm run lint     # Verificação de código
+```
 
-## How can I deploy this project?
+## 🚀 Deploy
 
-Simply open [Lovable](https://lovable.dev/projects/b60c81ce-5c77-476f-8949-83b993b67387) and click on Share -> Publish.
+### Opção 1: Vercel (Recomendado)
+1. Conecte sua conta GitHub à Vercel
+2. Importe o repositório
+3. Configure as variáveis de ambiente
+4. Deploy automático
 
-## Can I connect a custom domain to my Lovable project?
+### Opção 2: Netlify
+1. Faça o build: `npm run build`
+2. Arraste a pasta `dist/` para o Netlify
+3. Configure as variáveis de ambiente
 
-Yes, you can!
+### Opção 3: Manual
+Consulte os guias de deploy:
+- `DEPLOY-QUICK-GUIDE.md`
+- `VERCEL-DEPLOY-GUIDE.md`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🏢 Informações Institucionais
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### EETAD - Escola de Educação Teológica
+- **Site**: https://eetad.com.br
+- **Endereço**: Rua Pr. Bernhard Johnson, 500 - Tijuco das Telhas, Campinas/SP
+
+### Ministério PRV
+- **Site**: https://admissaoprv.com.br
+- **Endereço**: ASR-SE 75, Alameda 2, Lote 53 - Plano Diretor Sul, Palmas/TO
+
+## 📞 Suporte
+
+Para suporte técnico ou dúvidas sobre o sistema, entre em contato através dos canais oficiais da EETAD Núcleo Palmas.
