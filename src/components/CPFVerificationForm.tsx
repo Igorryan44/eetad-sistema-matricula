@@ -150,11 +150,11 @@ const CPFVerificationForm = ({ onCPFVerified }: CPFVerificationFormProps) => {
   return (
     <div className="relative">
       {/* Efeito de brilho de fundo */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-emerald-400 rounded-2xl blur opacity-75 animate-pulse"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 rounded-2xl blur opacity-75 animate-pulse"></div>
       
       <Card className="relative bg-white/95 backdrop-blur-sm border-0 shadow-2xl rounded-2xl overflow-hidden">
         {/* Header com gradiente */}
-        <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white relative overflow-hidden">
+        <CardHeader className="text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white relative overflow-hidden px-4 py-6 md:px-6 md:py-8">
           <div 
               className="absolute inset-0 opacity-30"
               style={{
@@ -163,23 +163,23 @@ const CPFVerificationForm = ({ onCPFVerified }: CPFVerificationFormProps) => {
             ></div>
           
           <div className="relative z-10">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Shield className="h-8 w-8 text-white" />
+            <div className="flex justify-center mb-3 md:mb-4">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <Shield className="h-6 w-6 md:h-8 md:w-8 text-white" />
               </div>
             </div>
-            <CardTitle className="text-2xl font-bold mb-2">Verificação de CPF</CardTitle>
-            <CardDescription className="text-blue-100 text-lg">
+            <CardTitle className="text-xl md:text-2xl font-bold mb-2">Verificação de CPF</CardTitle>
+            <CardDescription className="text-blue-100 text-base md:text-lg">
               Digite seu CPF para acessar o sistema
             </CardDescription>
           </div>
         </CardHeader>
         
-        <CardContent className="p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-3">
-              <Label htmlFor="cpf" className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                <UserCheck className="h-5 w-5 text-blue-600" />
+        <CardContent className="p-4 md:p-6 lg:p-8">
+          <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+            <div className="space-y-2 md:space-y-3">
+              <Label htmlFor="cpf" className="text-base md:text-lg font-semibold text-gray-700 flex items-center gap-2">
+                <UserCheck className="h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                 CPF
               </Label>
               <div className="relative">
@@ -191,27 +191,27 @@ const CPFVerificationForm = ({ onCPFVerified }: CPFVerificationFormProps) => {
                   value={cpf}
                   onChange={handleCPFChange}
                   required
-                  className="text-center text-xl font-mono h-14 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 rounded-xl transition-all duration-300 bg-gray-50 focus:bg-white"
+                  className="text-center text-lg md:text-xl font-mono h-12 md:h-14 border-2 border-gray-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 rounded-xl transition-all duration-300 bg-gray-50 focus:bg-white"
                 />
-                <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-gray-400" />
+                <div className="absolute inset-y-0 right-3 md:right-4 flex items-center pointer-events-none">
+                  <Search className="h-4 w-4 md:h-5 md:w-5 text-gray-400" />
                 </div>
               </div>
             </div>
             
             <Button 
               type="submit" 
-              className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-none rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className="w-full h-12 md:h-14 text-base md:text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-none rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               disabled={isLoading}
             >
               {isLoading ? (
-                <div className="flex items-center gap-3">
-                  <Loader2 className="h-5 w-5 animate-spin" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Loader2 className="h-4 w-4 md:h-5 md:w-5 animate-spin" />
                   <span>Verificando...</span>
                 </div>
               ) : (
-                <div className="flex items-center gap-3">
-                  <Search className="h-5 w-5" />
+                <div className="flex items-center gap-2 md:gap-3">
+                  <Search className="h-4 w-4 md:h-5 md:w-5" />
                   <span>Verificar CPF</span>
                 </div>
               )}
@@ -219,11 +219,11 @@ const CPFVerificationForm = ({ onCPFVerified }: CPFVerificationFormProps) => {
           </form>
           
           {/* Informações de segurança */}
-          <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
-            <div className="flex items-start gap-3">
-              <Shield className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
+          <div className="mt-4 md:mt-6 p-3 md:p-4 bg-blue-50 rounded-xl border border-blue-200">
+            <div className="flex items-start gap-2 md:gap-3">
+              <Shield className="h-4 w-4 md:h-5 md:w-5 text-blue-600 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-sm font-medium text-blue-800 mb-1">Seus dados estão seguros</p>
+                <p className="text-xs md:text-sm font-medium text-blue-800 mb-1">Seus dados estão seguros</p>
                 <p className="text-xs text-blue-600">
                   Utilizamos criptografia para proteger suas informações pessoais.
                 </p>

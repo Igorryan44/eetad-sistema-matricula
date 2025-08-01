@@ -266,11 +266,11 @@ const RegistrationForm = ({ cpf, onRegistrationComplete, onBack }: RegistrationF
   return (
     <div className="relative">
       {/* Efeito de brilho de fundo */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 via-blue-400 to-emerald-400 rounded-2xl blur opacity-30 animate-pulse"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 rounded-2xl blur opacity-30 animate-pulse"></div>
       
       <Card className="relative bg-white/95 backdrop-blur-sm border-0 shadow-2xl rounded-2xl overflow-hidden">
         {/* Header modernizado */}
-        <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white relative overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-purple-600 to-blue-600 text-white relative overflow-hidden px-4 py-6 md:px-6 md:py-8">
           <div 
             className="absolute inset-0 opacity-30"
             style={{
@@ -279,22 +279,22 @@ const RegistrationForm = ({ cpf, onRegistrationComplete, onBack }: RegistrationF
           ></div>
           
           <div className="relative z-10">
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 mb-4">
               <Button 
                 variant="ghost" 
                 size="sm" 
                 onClick={onBack}
-                className="text-white hover:bg-white/20 rounded-full p-2 transition-all duration-300 hover:scale-110"
+                className="text-white hover:bg-white/20 rounded-full p-2 transition-all duration-300 hover:scale-110 self-start"
               >
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-4 w-4 md:h-5 md:w-5" />
               </Button>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                  <GraduationCap className="h-6 w-6 text-white" />
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 md:gap-3 w-full">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm flex-shrink-0">
+                  <GraduationCap className="h-5 w-5 md:h-6 md:w-6 text-white" />
                 </div>
-                <div>
-                  <CardTitle className="text-2xl font-bold">Formulário de Matrícula</CardTitle>
-                  <CardDescription className="text-purple-100 text-lg">
+                <div className="min-w-0 flex-1">
+                  <CardTitle className="text-lg md:text-2xl font-bold leading-tight">Formulário de Matrícula</CardTitle>
+                  <CardDescription className="text-purple-100 text-sm md:text-lg leading-tight">
                     Complete seus dados para finalizar a matrícula
                   </CardDescription>
                 </div>
@@ -302,31 +302,31 @@ const RegistrationForm = ({ cpf, onRegistrationComplete, onBack }: RegistrationF
             </div>
             
             {/* Indicador de progresso */}
-            <div className="flex items-center gap-2 text-sm text-purple-100">
-              <UserCheck className="h-4 w-4" />
+            <div className="flex items-center gap-2 text-xs md:text-sm text-purple-100">
+              <UserCheck className="h-3 w-3 md:h-4 md:w-4" />
               <span>CPF: {cpf}</span>
             </div>
           </div>
         </CardHeader>
         
-        <CardContent className="p-8">
-          <form onSubmit={handleSubmit} className="space-y-8">
+        <CardContent className="p-4 md:p-6 lg:p-8">
+          <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
             {/* Informações Acadêmicas */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                  <School className="h-5 w-5 text-white" />
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <School className="h-4 w-4 md:h-5 md:w-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Origem Acadêmica do Aluno</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">Origem Acadêmica do Aluno</h3>
               </div>
               
-              <div className="space-y-3">
-                <Label className="text-base font-semibold text-gray-700 flex items-center gap-2">
-                  <BookOpen className="h-4 w-4 text-blue-600" />
+              <div className="space-y-2 md:space-y-3">
+                <Label className="text-sm md:text-base font-semibold text-gray-700 flex items-center gap-2">
+                  <BookOpen className="h-3 w-3 md:h-4 md:w-4 text-blue-600" />
                   Possui Formação Teológica?
                 </Label>
                 <Select value={formData.possuiFormacao} onValueChange={(value) => handleInputChange("possuiFormacao", value)}>
-                  <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-blue-500 rounded-xl">
+                  <SelectTrigger className="h-10 md:h-12 border-2 border-gray-200 focus:border-blue-500 rounded-xl">
                     <SelectValue placeholder="-- Selecione --" />
                   </SelectTrigger>
                   <SelectContent>

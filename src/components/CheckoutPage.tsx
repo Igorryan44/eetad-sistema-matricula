@@ -300,34 +300,34 @@ const CheckoutPage = ({ bookOrder, onBack }: CheckoutPageProps) => {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto p-4 space-y-8">
         {/* Progress Indicator */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="flex items-center space-x-4 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-white/20">
-            <div className="flex items-center space-x-2 text-green-600">
-              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <User className="w-4 h-4" />
+        <div className="flex items-center justify-center mb-6 md:mb-8 px-4">
+          <div className="flex items-center space-x-2 md:space-x-4 bg-white/80 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg border border-white/20 overflow-x-auto">
+            <div className="flex items-center space-x-1 md:space-x-2 text-green-600 flex-shrink-0">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <User className="w-3 h-3 md:w-4 md:h-4" />
               </div>
-              <span className="text-sm font-medium">CPF</span>
+              <span className="text-xs md:text-sm font-medium hidden sm:block">CPF</span>
             </div>
-            <div className="w-8 h-0.5 bg-green-300"></div>
-            <div className="flex items-center space-x-2 text-green-600">
-              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <FileText className="w-4 h-4" />
+            <div className="w-4 md:w-8 h-0.5 bg-green-300 flex-shrink-0"></div>
+            <div className="flex items-center space-x-1 md:space-x-2 text-green-600 flex-shrink-0">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <FileText className="w-3 h-3 md:w-4 md:h-4" />
               </div>
-              <span className="text-sm font-medium">Cadastro</span>
+              <span className="text-xs md:text-sm font-medium hidden sm:block">Cadastro</span>
             </div>
-            <div className="w-8 h-0.5 bg-green-300"></div>
-            <div className="flex items-center space-x-2 text-green-600">
-              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <Book className="w-4 h-4" />
+            <div className="w-4 md:w-8 h-0.5 bg-green-300 flex-shrink-0"></div>
+            <div className="flex items-center space-x-1 md:space-x-2 text-green-600 flex-shrink-0">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-green-100 rounded-full flex items-center justify-center">
+                <Book className="w-3 h-3 md:w-4 md:h-4" />
               </div>
-              <span className="text-sm font-medium">Livros</span>
+              <span className="text-xs md:text-sm font-medium hidden sm:block">Livros</span>
             </div>
-            <div className="w-8 h-0.5 bg-blue-300"></div>
-            <div className="flex items-center space-x-2 text-blue-600">
-              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center animate-pulse">
-                <CreditCard className="w-4 h-4" />
+            <div className="w-4 md:w-8 h-0.5 bg-blue-300 flex-shrink-0"></div>
+            <div className="flex items-center space-x-1 md:space-x-2 text-blue-600 flex-shrink-0">
+              <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-100 rounded-full flex items-center justify-center animate-pulse">
+                <CreditCard className="w-3 h-3 md:w-4 md:h-4" />
               </div>
-              <span className="text-sm font-medium">Pagamento</span>
+              <span className="text-xs md:text-sm font-medium hidden sm:block">Pagamento</span>
             </div>
           </div>
         </div>
@@ -365,93 +365,93 @@ const CheckoutPage = ({ bookOrder, onBack }: CheckoutPageProps) => {
             </div>
           </CardHeader>
           
-          <CardContent className="p-8">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+          <CardContent className="p-4 md:p-8">
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-10">
               {/* Order Summary */}
-              <div className="space-y-6 animate-slide-in">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-blue-100 rounded-lg">
-                    <Book className="h-6 w-6 text-blue-600" />
+              <div className="space-y-4 md:space-y-6 animate-slide-in">
+                <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                  <div className="p-1.5 md:p-2 bg-blue-100 rounded-lg">
+                    <Book className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800">Resumo do Pedido</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800">Resumo do Pedido</h3>
                 </div>
                 
-                <div className="glass-dark p-8 rounded-2xl space-y-6 border border-white/20">
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200/50">
+                <div className="glass-dark p-4 md:p-8 rounded-2xl space-y-4 md:space-y-6 border border-white/20">
+                  <div className="flex justify-between items-center py-2 md:py-3 border-b border-gray-200/50">
                     <div className="flex items-center gap-2">
-                      <User className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-600 font-medium">Aluno:</span>
+                      <User className="h-3 w-3 md:h-4 md:w-4 text-gray-500" />
+                      <span className="text-gray-600 font-medium text-sm md:text-base">Aluno:</span>
                     </div>
-                    <span className="font-semibold text-gray-800">{bookOrder.studentName}</span>
+                    <span className="font-semibold text-gray-800 text-sm md:text-base text-right">{bookOrder.studentName}</span>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200/50">
+                  <div className="flex justify-between items-center py-2 md:py-3 border-b border-gray-200/50">
                     <div className="flex items-center gap-2">
-                      <FileText className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-600 font-medium">CPF:</span>
+                      <FileText className="h-3 w-3 md:h-4 md:w-4 text-gray-500" />
+                      <span className="text-gray-600 font-medium text-sm md:text-base">CPF:</span>
                     </div>
-                    <span className="font-semibold text-gray-800 font-mono">{bookOrder.cpf}</span>
+                    <span className="font-semibold text-gray-800 font-mono text-sm md:text-base">{bookOrder.cpf}</span>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200/50">
+                  <div className="flex justify-between items-center py-2 md:py-3 border-b border-gray-200/50">
                     <div className="flex items-center gap-2">
-                      <Book className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-600 font-medium">Ciclo:</span>
+                      <Book className="h-3 w-3 md:h-4 md:w-4 text-gray-500" />
+                      <span className="text-gray-600 font-medium text-sm md:text-base">Ciclo:</span>
                     </div>
-                    <span className="font-semibold text-gray-800">{bookOrder.cycle || "1º Ciclo Básico"}</span>
+                    <span className="font-semibold text-gray-800 text-sm md:text-base text-right">{bookOrder.cycle || "1º Ciclo Básico"}</span>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-gray-200/50">
+                  <div className="flex justify-between items-center py-2 md:py-3 border-b border-gray-200/50">
                     <div className="flex items-center gap-2">
-                      <Book className="h-4 w-4 text-gray-500" />
-                      <span className="text-gray-600 font-medium">Livro:</span>
+                      <Book className="h-3 w-3 md:h-4 md:w-4 text-gray-500" />
+                      <span className="text-gray-600 font-medium text-sm md:text-base">Livro:</span>
                     </div>
-                    <span className="font-semibold text-gray-800 text-right max-w-xs">{bookOrder.bookName}</span>
+                    <span className="font-semibold text-gray-800 text-right max-w-xs text-sm md:text-base">{bookOrder.bookName}</span>
                   </div>
                   
-                  <div className="gradient-success rounded-xl px-6 py-4 border border-green-200/50">
+                  <div className="gradient-success rounded-xl px-4 md:px-6 py-3 md:py-4 border border-green-200/50">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-2">
-                        <DollarSign className="h-6 w-6 text-green-800" />
-                        <span className="text-xl font-bold text-green-800">Total:</span>
+                        <DollarSign className="h-5 w-5 md:h-6 md:w-6 text-green-800" />
+                        <span className="text-lg md:text-xl font-bold text-green-800">Total:</span>
                       </div>
-                      <span className="text-3xl font-bold text-green-700">R$ {bookOrder.price.toFixed(2)}</span>
+                      <span className="text-2xl md:text-3xl font-bold text-green-700">R$ {bookOrder.price.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* PIX Payment */}
-              <div className="space-y-6 animate-slide-in" style={{animationDelay: '0.2s'}}>
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-green-100 rounded-lg">
-                    <QrCode className="h-6 w-6 text-green-600" />
+              <div className="space-y-4 md:space-y-6 animate-slide-in" style={{animationDelay: '0.2s'}}>
+                <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                  <div className="p-1.5 md:p-2 bg-green-100 rounded-lg">
+                    <QrCode className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800">Pagamento PIX</h3>
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800">Pagamento PIX</h3>
                 </div>
                 
                 {isGeneratingPix ? (
-                  <div className="glass p-12 text-center rounded-2xl border border-white/20">
+                  <div className="glass p-6 md:p-12 text-center rounded-2xl border border-white/20">
                     <div className="relative">
-                      <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-6"></div>
+                      <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4 md:mb-6"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <Zap className="h-6 w-6 text-blue-600 animate-pulse" />
+                        <Zap className="h-5 w-5 md:h-6 md:w-6 text-blue-600 animate-pulse" />
                       </div>
                     </div>
-                    <p className="text-xl font-semibold text-blue-700 mb-2">Gerando chave PIX...</p>
-                    <p className="text-blue-600">Conectando com MercadoPago</p>
+                    <p className="text-lg md:text-xl font-semibold text-blue-700 mb-2">Gerando chave PIX...</p>
+                    <p className="text-sm md:text-base text-blue-600">Conectando com MercadoPago</p>
                   </div>
                 ) : (
-                  <div className="space-y-8">
+                  <div className="space-y-6 md:space-y-8">
                     {/* QR Code Section */}
-                    <div className="glass text-center p-8 rounded-2xl border border-white/20">
+                    <div className="glass text-center p-4 md:p-8 rounded-2xl border border-white/20">
                       {qrCodeData ? (
-                        <div className="space-y-6">
+                        <div className="space-y-4 md:space-y-6">
                           <div className="relative inline-block">
                             <img
                               src={`data:image/png;base64,${qrCodeData}`}
                               alt="QR Code PIX"
-                              className="w-64 h-64 mx-auto rounded-2xl border-4 border-white shadow-2xl hover:scale-105 transition-transform duration-300"
+                              className="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-2xl border-4 border-white shadow-2xl hover:scale-105 transition-transform duration-300"
                             />
                             <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
                               <CheckCircle className="h-5 w-5 text-white" />
@@ -467,62 +467,62 @@ const CheckoutPage = ({ bookOrder, onBack }: CheckoutPageProps) => {
                           </div>
                         </div>
                       ) : (
-                        <div className="w-64 h-64 bg-gray-100 mx-auto rounded-2xl flex items-center justify-center border-4 border-gray-200">
-                          <QrCode className="h-32 w-32 text-gray-400" />
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-100 mx-auto rounded-2xl flex items-center justify-center border-4 border-gray-200">
+                          <QrCode className="h-24 w-24 md:h-32 md:w-32 text-gray-400" />
                         </div>
                       )}
                     </div>
 
                     {/* PIX Key Section */}
-                    <div className="space-y-4">
-                      <Label className="text-lg font-semibold text-gray-700 flex items-center gap-2">
-                        <Copy className="h-5 w-5" />
+                    <div className="space-y-3 md:space-y-4">
+                      <Label className="text-base md:text-lg font-semibold text-gray-700 flex items-center gap-2">
+                        <Copy className="h-4 w-4 md:h-5 md:w-5" />
                         Ou copie a chave PIX:
                       </Label>
-                      <div className="flex gap-3">
+                      <div className="flex gap-2 md:gap-3">
                         <Input
                           value={pixKey}
                           readOnly
-                          className="text-sm font-mono bg-white/80 border-2 border-gray-200 rounded-xl px-4 py-3 focus:border-blue-400 transition-colors"
+                          className="text-xs md:text-sm font-mono bg-white/80 border-2 border-gray-200 rounded-xl px-3 md:px-4 py-2 md:py-3 focus:border-blue-400 transition-colors"
                         />
                         <Button
                           type="button"
                           onClick={copyPixKey}
-                          className="btn-modern px-6 py-3 rounded-xl"
+                          className="btn-modern px-4 md:px-6 py-2 md:py-3 rounded-xl flex-shrink-0"
                         >
-                          <Copy className="h-5 w-5" />
+                          <Copy className="h-4 w-4 md:h-5 md:w-5" />
                         </Button>
                       </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4">
                       {paymentStatus === 'pending' && (
-                        <div className="space-y-4">
+                        <div className="space-y-3 md:space-y-4">
                           <Button
                             onClick={verifyPaymentStatus}
-                            className="w-full btn-modern bg-green-600 hover:bg-green-700 text-white py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                            className="w-full btn-modern bg-green-600 hover:bg-green-700 text-white py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                             disabled={!paymentId}
                           >
-                            <CheckCircle className="h-6 w-6 mr-3" />
+                            <CheckCircle className="h-5 w-5 md:h-6 md:w-6 mr-2 md:mr-3" />
                             Verificar Pagamento
                           </Button>
                           
                           <Button
                             onClick={cancelPayment}
                             variant="outline"
-                            className="w-full border-2 border-red-300 text-red-600 hover:bg-red-50 py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:border-red-400"
+                            className="w-full border-2 border-red-300 text-red-600 hover:bg-red-50 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold transition-all duration-300 hover:border-red-400"
                             disabled={isCancelling || !paymentId}
                           >
                             {isCancelling ? (
                               <>
-                                <Loader2 className="h-5 w-5 mr-3 animate-spin" />
-                                Cancelando...
+                                <Loader2 className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 animate-spin" />
+                                <span className="text-sm md:text-base">Cancelando...</span>
                               </>
                             ) : (
                               <>
-                                <X className="h-5 w-5 mr-3" />
-                                Cancelar Pedido
+                                <X className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3" />
+                                <span className="text-sm md:text-base">Cancelar Pedido</span>
                               </>
                             )}
                           </Button>
@@ -530,28 +530,28 @@ const CheckoutPage = ({ bookOrder, onBack }: CheckoutPageProps) => {
                       )}
 
                       {paymentStatus === 'processing' && (
-                        <div className="glass text-center p-8 rounded-2xl border border-blue-200/50">
+                        <div className="glass text-center p-6 md:p-8 rounded-2xl border border-blue-200/50">
                           <div className="relative">
-                            <div className="w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-4"></div>
-                            <Clock className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5 w-5 text-blue-600" />
+                            <div className="w-10 h-10 md:w-12 md:h-12 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mx-auto mb-3 md:mb-4"></div>
+                            <Clock className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-4 w-4 md:h-5 md:w-5 text-blue-600" />
                           </div>
-                          <p className="text-xl font-semibold text-blue-700 mb-2">Verificando pagamento...</p>
-                          <p className="text-blue-600">Aguarde alguns instantes</p>
+                          <p className="text-lg md:text-xl font-semibold text-blue-700 mb-2">Verificando pagamento...</p>
+                          <p className="text-sm md:text-base text-blue-600">Aguarde alguns instantes</p>
                         </div>
                       )}
 
                       {paymentStatus === 'confirmed' && (
-                        <div className="gradient-success text-center p-8 rounded-2xl border border-green-200/50 animate-fade-in">
+                        <div className="gradient-success text-center p-6 md:p-8 rounded-2xl border border-green-200/50 animate-fade-in">
                           <div className="relative">
-                            <CheckCircle className="h-20 w-20 text-green-600 mx-auto mb-6 animate-bounce" />
+                            <CheckCircle className="h-16 w-16 md:h-20 md:w-20 text-green-600 mx-auto mb-4 md:mb-6 animate-bounce" />
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="w-20 h-20 bg-green-400/20 rounded-full animate-ping"></div>
+                              <div className="w-16 h-16 md:w-20 md:h-20 bg-green-400/20 rounded-full animate-ping"></div>
                             </div>
                           </div>
-                          <h4 className="text-2xl font-bold text-green-800 mb-3">
+                          <h4 className="text-xl md:text-2xl font-bold text-green-800 mb-3">
                             🎉 Pagamento Confirmado!
                           </h4>
-                          <p className="text-green-700 font-medium text-lg">
+                          <p className="text-green-700 font-medium text-base md:text-lg">
                             Seu livro será processado em breve. Você receberá uma confirmação via WhatsApp.
                           </p>
                         </div>
@@ -563,47 +563,47 @@ const CheckoutPage = ({ bookOrder, onBack }: CheckoutPageProps) => {
             </div>
 
             {/* Instructions */}
-            <div className="mt-12 glass-dark p-8 rounded-2xl border border-white/20 animate-fade-in" style={{animationDelay: '0.4s'}}>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-blue-100 rounded-lg">
-                  <Info className="h-6 w-6 text-blue-600" />
+            <div className="mt-8 md:mt-12 glass-dark p-4 md:p-8 rounded-2xl border border-white/20 animate-fade-in" style={{animationDelay: '0.4s'}}>
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="p-1.5 md:p-2 bg-blue-100 rounded-lg">
+                  <Info className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
                 </div>
-                <h4 className="text-xl font-bold text-blue-900">Instruções para pagamento:</h4>
+                <h4 className="text-lg md:text-xl font-bold text-blue-900">Instruções para pagamento:</h4>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-                    <p className="text-blue-800 font-medium">Abra seu aplicativo de pagamentos (Banco, PicPay, etc.)</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+                <div className="space-y-3 md:space-y-4">
+                  <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/50 rounded-xl">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs md:text-sm font-bold flex-shrink-0">1</div>
+                    <p className="text-blue-800 font-medium text-sm md:text-base">Abra seu aplicativo de pagamentos (Banco, PicPay, etc.)</p>
                   </div>
-                  <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-                    <p className="text-blue-800 font-medium">Escolha a opção "PIX" e depois "Ler QR Code" ou "Colar código"</p>
+                  <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/50 rounded-xl">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs md:text-sm font-bold flex-shrink-0">2</div>
+                    <p className="text-blue-800 font-medium text-sm md:text-base">Escolha a opção "PIX" e depois "Ler QR Code" ou "Colar código"</p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-                    <p className="text-blue-800 font-medium">Escaneie o QR Code acima ou cole a chave PIX</p>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/50 rounded-xl">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs md:text-sm font-bold flex-shrink-0">3</div>
+                    <p className="text-blue-800 font-medium text-sm md:text-base">Escaneie o QR Code acima ou cole a chave PIX</p>
                   </div>
-                  <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
-                    <p className="text-blue-800 font-medium">Confirme o pagamento no valor de <span className="font-bold">R$ {bookOrder.price.toFixed(2)}</span></p>
+                  <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/50 rounded-xl">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs md:text-sm font-bold flex-shrink-0">4</div>
+                    <p className="text-blue-800 font-medium text-sm md:text-base">Confirme o pagamento no valor de <span className="font-bold">R$ {bookOrder.price.toFixed(2)}</span></p>
                   </div>
-                  <div className="flex items-start gap-4 p-4 bg-white/50 rounded-xl">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">5</div>
-                    <p className="text-blue-800 font-medium">Após o pagamento, clique em "Verificar Pagamento"</p>
+                  <div className="flex items-start gap-3 md:gap-4 p-3 md:p-4 bg-white/50 rounded-xl">
+                    <div className="w-7 h-7 md:w-8 md:h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-xs md:text-sm font-bold flex-shrink-0">5</div>
+                    <p className="text-blue-800 font-medium text-sm md:text-base">Após o pagamento, clique em "Verificar Pagamento"</p>
                   </div>
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-green-50/80 rounded-xl border border-green-200/50">
+              <div className="mt-4 md:mt-6 p-3 md:p-4 bg-green-50/80 rounded-xl border border-green-200/50">
                 <div className="flex items-center gap-2 mb-2">
-                  <Shield className="h-5 w-5 text-green-600" />
-                  <span className="font-semibold text-green-800">Pagamento Seguro</span>
+                  <Shield className="h-4 w-4 md:h-5 md:w-5 text-green-600" />
+                  <span className="font-semibold text-green-800 text-sm md:text-base">Pagamento Seguro</span>
                 </div>
-                <p className="text-green-700 text-sm">
+                <p className="text-green-700 text-xs md:text-sm">
                   Seus dados estão protegidos e o pagamento é processado pelo MercadoPago com total segurança.
                 </p>
               </div>

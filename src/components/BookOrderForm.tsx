@@ -246,11 +246,10 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
   return (
     <div className="relative">
       {/* Efeito de brilho de fundo */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400 via-blue-400 to-purple-400 rounded-2xl blur opacity-30 animate-pulse"></div>
+      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 rounded-2xl blur opacity-30 animate-pulse"></div>
       
       <Card className="relative bg-white/95 backdrop-blur-sm border-0 shadow-2xl rounded-2xl overflow-hidden">
-        {/* Header modernizado */}
-        <CardHeader className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white relative overflow-hidden">
+        <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white relative overflow-hidden">
           <div 
               className="absolute inset-0 opacity-30"
               style={{
@@ -291,15 +290,15 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
           </div>
         </CardHeader>
         
-        <CardContent className="p-8">
-          <form onSubmit={handleSubmit} className="space-y-8">
+        <CardContent className="p-4 md:p-8">
+          <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
             {/* Seleção de Ciclo */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                  <GraduationCap className="h-5 w-5 text-white" />
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                  <GraduationCap className="h-4 w-4 md:h-5 md:w-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Selecione o Ciclo</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">Selecione o Ciclo</h3>
               </div>
               
               <div className="space-y-3">
@@ -308,7 +307,7 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
                   Ciclo de Estudo
                 </Label>
                 <Select value={selectedCycle} onValueChange={setSelectedCycle}>
-                  <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-blue-500 rounded-xl">
+                  <SelectTrigger className="h-10 md:h-12 border-2 border-gray-200 focus:border-blue-500 rounded-xl text-sm md:text-base">
                     <SelectValue placeholder="Selecione o ciclo" />
                   </SelectTrigger>
                   <SelectContent>
@@ -321,12 +320,12 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
             </div>
 
             {/* Seleção de Livro */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
-                  <Book className="h-5 w-5 text-white" />
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
+                  <Book className="h-4 w-4 md:h-5 md:w-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Escolha o Livro</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">Escolha o Livro</h3>
               </div>
               
               <div className="space-y-3">
@@ -335,7 +334,7 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
                   Livro Disponível
                 </Label>
                 <Select value={selectedBook} onValueChange={setSelectedBook}>
-                  <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-green-500 rounded-xl">
+                  <SelectTrigger className="h-10 md:h-12 border-2 border-gray-200 focus:border-green-500 rounded-xl text-sm md:text-base">
                     <SelectValue placeholder="Selecione um livro" />
                   </SelectTrigger>
                   <SelectContent>
@@ -350,20 +349,20 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
 
               {/* Resumo do livro selecionado */}
               {selectedBookData && (
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border-l-4 border-green-400 animate-fade-in">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                        <Book className="h-6 w-6 text-green-600" />
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 p-4 md:p-6 rounded-xl border-l-4 border-green-400 animate-fade-in">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div className="flex items-center gap-2 md:gap-3">
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <Book className="h-5 w-5 md:h-6 md:w-6 text-green-600" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-lg text-gray-800">{selectedBookData.name}</h4>
-                        <p className="text-gray-600">{cycleNames[selectedCycle as keyof typeof cycleNames]}</p>
+                        <h4 className="font-bold text-base md:text-lg text-gray-800">{selectedBookData.name}</h4>
+                        <p className="text-sm md:text-base text-gray-600">{cycleNames[selectedCycle as keyof typeof cycleNames]}</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className="flex items-center gap-2 text-2xl font-bold text-green-600">
-                        <DollarSign className="h-6 w-6" />
+                    <div className="text-left md:text-right">
+                      <div className="flex items-center gap-2 text-xl md:text-2xl font-bold text-green-600">
+                        <DollarSign className="h-5 w-5 md:h-6 md:w-6" />
                         R$ {selectedBookData.price.toFixed(2)}
                       </div>
                     </div>
@@ -373,12 +372,12 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
             </div>
 
             {/* Observação */}
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
-                  <FileText className="h-5 w-5 text-white" />
+            <div className="space-y-4 md:space-y-6">
+              <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center">
+                  <FileText className="h-4 w-4 md:h-5 md:w-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-800">Observação</h3>
+                <h3 className="text-lg md:text-xl font-bold text-gray-800">Observação</h3>
               </div>
               
               <div className="space-y-3">
@@ -391,26 +390,26 @@ const BookOrderForm = ({ student, onBookOrderComplete, onBack }: BookOrderFormPr
                   placeholder="Observação sobre o pedido"
                   value={observacao}
                   onChange={(e) => setObservacao(e.target.value)}
-                  className="h-12 border-2 border-gray-200 focus:border-orange-500 rounded-xl"
+                  className="h-10 md:h-12 border-2 border-gray-200 focus:border-orange-500 rounded-xl text-sm md:text-base"
                 />
               </div>
             </div>
 
             {/* Botão de Submissão */}
-            <div className="flex justify-center pt-8">
+            <div className="flex justify-center pt-6 md:pt-8">
               <Button 
                 type="submit" 
                 disabled={isLoading || !selectedBook}
-                className="btn-modern bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-700 hover:to-blue-700 text-white px-12 py-4 rounded-xl text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-modern bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 md:px-12 py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
               >
                 {isLoading ? (
                   <>
-                    <Loader2 className="mr-3 h-5 w-5 animate-spin" />
+                    <Loader2 className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5 animate-spin" />
                     Processando Pedido...
                   </>
                 ) : (
                   <>
-                    <CheckCircle className="mr-3 h-5 w-5" />
+                    <CheckCircle className="mr-2 md:mr-3 h-4 w-4 md:h-5 md:w-5" />
                     Confirmar Pedido
                   </>
                 )}
