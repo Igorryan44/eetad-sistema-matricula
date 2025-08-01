@@ -1,4 +1,21 @@
-# Welcome to your Lovable project
+# 🎓 Sistema EETAD Palmas - Matrícula e Gestão Acadêmica
+
+Sistema completo de matrícula e gestão acadêmica para a **Escola Estadual de Tempo Integral Antônio Demóstenes (EETAD)** em Palmas, Tocantins.
+
+## 📁 Estrutura do Projeto
+
+### Frontend (React + Vite)
+- **`src/`** - Código principal do sistema React
+- **`index.html`** - Página principal
+- **`package.json`** - Dependências do projeto React
+
+### Backend/Webhooks
+- **`webhooks/`** - Webhooks do WhatsApp (Deno)
+- **`supabase/functions/`** - Edge Functions do Supabase
+
+### Configuração e Deploy
+- **Scripts PowerShell** - Automação de configuração
+- **Documentação** - Guias de implantação e configuração
 
 ## Project info
 
